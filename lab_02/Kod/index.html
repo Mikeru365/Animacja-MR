@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Zegar Analogowy - Lab 02</title>
+    <style>
+        body { 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            height: 100vh; margin: 0; 
+            background: #919a5b; 
+            color: white;
+            font-family: sans-serif;
+        }
+        canvas { background: #fff;
+             border-radius: 50%;
+              border: 15px solid #8f8756;
+               box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .info { margin-top: 20px; color: #bdc3c7; }
+    </style>
+</head>
+<body>
+    <canvas id="clockCanvas" width="500" height="500"></canvas>
+    <div class="info">Naciśnij <strong>SPACJĘ</strong>, aby zatrzymać czas</div>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
