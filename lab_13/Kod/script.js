@@ -27,16 +27,15 @@ async function init() {
         renderer.setSize(window.innerWidth, window.innerHeight);
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         
-        // Ustawienia kolorów i tonowania (Wymagania na 4.0)
+        // Ustawienia kolorów i tonowania
         renderer.toneMapping = THREE.ACESFilmicToneMapping;
-        renderer.toneMappingExposure = 1.2; // Lekko podbita ekspozycja
+        renderer.toneMappingExposure = 1.2;
         renderer.outputColorSpace = THREE.SRGBColorSpace;
         
-        // Włączenie cieni (Opcja dla chętnych)
+        // Włączenie cieni
         renderer.shadowMap.enabled = true;
         renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 
-        // 4. KONTROLA KAMERY (OrbitControls - Wymagania na 5.0)
         controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true; 
         controls.dampingFactor = 0.05;
@@ -110,10 +109,8 @@ async function init() {
         // POPRAWIONE: Zamienione na poprawne użycie backticków ` przy wstrzykiwaniu HTML
         infoDiv.innerHTML = `Model załadowany!<br>Liczba mesh-y: ${meshCount}<br><small>Użyj myszy do obracania/zoomu</small>`;
 
-        // 8. AUTOMATYCZNE KADROWANIE KAMERY (Wymagania na 5.0)
         fitCameraToModel(modelRoot);
 
-        // 9. OBSŁUGA ZMIANY ROZMIARU OKNA (Wymagania na 5.0)
         window.addEventListener('resize', onWindowResize);
 
         // 10. URUCHOMIENIE PĘTLI ANIMACJI
